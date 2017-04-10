@@ -360,6 +360,7 @@ you should place your code here."
   ;;----------------------------------------------------------
   (setq projectile-use-git-grep 1)
   (global-set-key (kbd "C-c g") 'helm-projectile-grep)
+  (global-set-key (kbd "M-p") 'helm-projectile-find-file)
 
   ;;----------------------------------------------------------
   ;; Move around buffers
