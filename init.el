@@ -412,6 +412,7 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'rainbow-identifiers-mode)
   (setq rainbow-identifiers-choose-face-function 'rainbow-identifiers-predefined-choose-face)
 
+  (require 'helm-bookmark)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
