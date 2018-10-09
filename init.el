@@ -361,6 +361,8 @@ you should place your code here."
   (setq helm-always-two-windows nil)
   (setq helm-display-function 'helm-default-display-buffer)
 
+  (require 'helm-bookmark)
+
   ;;----------------------------------------------------------
   ;; Projectile
   ;;----------------------------------------------------------
@@ -417,7 +419,28 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'rainbow-identifiers-mode)
   (setq rainbow-identifiers-choose-face-function 'rainbow-identifiers-predefined-choose-face)
 
-  (require 'helm-bookmark)
+  ;;----------------------------------------------------------
+  ;; Org-mode
+  ;;----------------------------------------------------------
+  (with-eval-after-load 'org
+    (setq org-directory "~/Documents/org/")
+    (setq org-agenda-files (list  "~/Documents/org/pa.org"))
+
+    (setq org-capture-templates
+          '(("s" "sketchfab" entry (file+olp "~/Documents/org/pa.org" "Sketchfab" "Tasks")
+             "* TODO %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n%a\n")
+            ("p" "personal" entry (file+olp "~/Documents/org/pa.org" "Perso" "Todo")
+             "* TODO %?\nSCHEDULED: %(org-insert-time-stamp (org-read-date nil t \"+0d\"))\n%a\n")))
+
+    (setq org-use-fast-todo-selection t)
+    (setq org-default-notes-file "~/Documents/org/pa.org")
+
+    (define-key org-mode-map (kbd "M-p") 'helm-multi-swoop-org)
+    (setq org-treat-S-cursor-todo-selection-as-state-change nil)
+    (global-set-key "\C-cl" 'org-store-link)
+    (global-set-key "\C-ca" 'org-agenda)
+    (global-set-key "\C-cc" 'org-capture)
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
