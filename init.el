@@ -421,6 +421,7 @@ you should place your code here."
   ;;----------------------------------------------------------
   ;; Org-mode
   ;;----------------------------------------------------------
+  (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
   (with-eval-after-load 'org
     (setq org-directory "~/Documents/org/")
     (setq org-agenda-files (list  "~/Documents/org/pa.org"))
@@ -439,7 +440,16 @@ you should place your code here."
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
     (global-set-key "\C-cc" 'org-capture)
+
+    (setq org-todo-keywords
+          '((sequence "TODO" "IN PROGRESS" "|" "DONE")))
     )
+    (setq org-todo-keyword-faces
+          '(("TODO" . org-warning) ("IN PROGRESS" . (:foreground "yellow" :background nil)))
+          )
+
+    ;; Add a note when clocking out
+    (setq org-log-note-clock-out t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
