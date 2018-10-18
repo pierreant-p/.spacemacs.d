@@ -450,6 +450,9 @@ you should place your code here."
 
     ;; Add a note when clocking out
     (setq org-log-note-clock-out t)
+
+    ;; Make agenda view open in the other buffer
+    (setq org-agenda-window-setup 'other-window)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
