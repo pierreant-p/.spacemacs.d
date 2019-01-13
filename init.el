@@ -459,6 +459,9 @@ you should place your code here."
     ;; Make agenda view open in the other buffer
     (setq org-agenda-window-setup 'other-window)
 
+    ;; Don't use system trash im magit
+    (setq magit-delete-by-moving-to-trash nil)
+)
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
