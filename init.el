@@ -439,6 +439,7 @@ you should place your code here."
 
     (setq org-use-fast-todo-selection t)
     (setq org-default-notes-file "~/Documents/org/pa.org")
+    (setq org-startup-truncated nil)
 
     (define-key org-mode-map (kbd "M-p") 'helm-multi-swoop-org)
     (setq org-treat-S-cursor-todo-selection-as-state-change nil)
