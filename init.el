@@ -400,6 +400,12 @@ you should place your code here."
   (defalias 'yes-or-no-p 'y-or-n-p)
 
   ;;----------------------------------------------------------
+  ;; Magit
+  ;;----------------------------------------------------------
+  ;; Don't use system trash im magit
+  (setq magit-delete-by-moving-to-trash nil)
+
+  ;;----------------------------------------------------------
   ;; Multiple cursors
   ;;----------------------------------------------------------
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
