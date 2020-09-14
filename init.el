@@ -479,19 +479,23 @@ you should place your code here."
 
     (setq org-todo-keywords
           '((sequence "TODO(t)" "IN PROGRESS(p!)" "|" "DONE(d@/!)")))
-    )
-    (setq org-todo-keyword-faces
-          '(("TODO" . org-warning) ("IN PROGRESS" . (:foreground "yellow" :background nil)))
-          )
+  )
 
-    ;; Add a note when clocking out
-    (setq org-log-note-clock-out t)
+  (setq org-todo-keyword-faces
+    '(("TODO" . org-warning) ("IN PROGRESS" . (:foreground "yellow" :background nil)))
+  )
 
-    ;; Make agenda view open in the other buffer
-    (setq org-agenda-window-setup 'other-window)
+  ;; Add a note when clocking out
+  (setq org-log-note-clock-out t)
 
-    ;; Don't use system trash im magit
-    (setq magit-delete-by-moving-to-trash nil)
+  ;; Make agenda view open in the other buffer
+  (setq org-agenda-window-setup 'other-window)
+
+  ;; ;; disable linum in org-mode
+  ;; (defun nolinum ()
+  ;;   (global-linum-mode 0)
+  ;;   )
+  ;; (add-hook 'org-mode-hook 'nolinum)
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
