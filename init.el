@@ -60,7 +60,6 @@ values."
      version-control
      yaml
      docker
-     scala
      sql
      )
    ;; List of additional packages that will be installed without being
